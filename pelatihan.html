@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelatihan Tata Busana | Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="tentang.html">Portofolio Saya</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuNavigasi"
+                aria-controls="menuNavigasi"
+                aria-expanded="false"
+                aria-label="Buka navigasi">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNavigasi">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Saya</a></li>
+                <li class="nav-item"><a class="nav-link" href="pendidikan.html">Pendidikan</a></li>
+                <li class="nav-item"><a class="nav-link active" href="pelatihan.html">Pelatihan</a></li>
+                <li class="nav-item"><a class="nav-link" href="keahlian.html">Keahlian</a></li>
+                <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container pt-4">
+    <a href="tentang.html" class="tombol-kembali">← Kembali ke Portofolio</a>
+</div>
+
+<header class="judul-halaman">
+    <div class="container">
+        <h1>Pelatihan Tata Busana</h1>
+        <p>Dokumentasi pelatihan, keterampilan, dan hasil karya tata busana.</p>
+    </div>
+</header>
+
+<main class="container konten-halaman">
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4 animasi-muncul">
+            <div class="kartu-foto">
+                <img src="alat.jpeg"
+                     alt="Foto mengenal Peralatan tata busana"
+                     class="foto-galeri"
+                     data-bs-toggle="modal"
+                     data-bs-target="#detailBusana1">
+
+                <div class="isi-kartu-foto">
+                    <h5>Kegiatan Pelatihan</h5>
+                    <p>Foto mengenal Peralatan tata busana .</p>
+                    <button class="tombol-detail"
+                            data-bs-toggle="modal"
+                            data-bs-target="#detailBusana1">
+                        Lihat Selengkapnya
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 animasi-muncul">
+            <div class="kartu-foto">
+                <img src="karya.jpeg"
+                     alt="Foto hasil karya tata busana"
+                     class="foto-galeri"
+                     data-bs-toggle="modal"
+                     data-bs-target="#detailBusana2">
+
+                <div class="isi-kartu-foto">
+                    <h5>Hasil Karya Tata Busana</h5>
+                    <p>Dokumentasi karya atau hasil pelatihan.</p>
+                    <button class="tombol-detail"
+                            data-bs-toggle="modal"
+                            data-bs-target="#detailBusana2">
+                        Lihat Selengkapnya
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<div class="modal fade" id="detailBusana1" tabindex="-1"
+     aria-labelledby="judulBusana1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="judulBusana1">Mengenal Peralatan tata busana</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body">
+                <img src="alat.jpeg" alt="Kegiatan pelatihan"
+                     class="img-fluid rounded mb-3">
+                <p>Foto selama mengikuti pelatihan tata busana, sebagai bagian dari pengalaman
+                    dan pembelajaran dalam mengenal berbagai peralatan yang digunakan dibidang tata busana.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detailBusana2" tabindex="-1"
+     aria-labelledby="judulBusana2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="judulBusana2">Hasil Karya Tata Busana</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body">
+                <img src="karya.jpeg" alt="Hasil karya tata busana"
+                     class="img-fluid rounded mb-3">
+                <p>Salah satu hasil karya dalam bidang tata busana yang menjadi bagian dari proses
+                    belajar dan pengembangan keterampilan. Melalui kegiatan ini, kreativitas, ketelitian, dan kemampuan
+                    bisa terus di kembangkan.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-website">
+    &copy; <span id="tahun"></span> Portofolio Pribadi Milasari
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="portofolio.js"></script>
+</body>
+</html>

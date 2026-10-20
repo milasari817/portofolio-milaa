@@ -1,0 +1,754 @@
+/* ==============================
+   PENGATURAN DASAR
+================================ */
+
+:root {
+    --putih: #ffffff;
+    --butter: #f7e7a5;
+    --butter-muda: #fff9e6;
+    --kuning-gelap: #e8ce72;
+    --teks: #51472f;
+    --teks-muda: #81765c;
+    --bayangan: rgba(117, 96, 39, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--teks);
+    background: var(--putih);
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ==============================
+   HALAMAN PROFIL AWAL
+================================ */
+
+.halaman-awal {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(247, 231, 165, 0.55),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #ffffff, #fffdf5);
+}
+
+.halaman-profil {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.bingkai-profil {
+    width: 270px;
+    height: 270px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #fff9e6,
+        #f0d777,
+        #fffdf5
+    );
+    box-shadow: 0 15px 40px var(--bayangan);
+    animation: gerakProfil 4s ease-in-out infinite;
+}
+
+.foto-profil-utama {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+
+.label-profil {
+    color: #a48a39;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.judul-profil {
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.judul-profil span {
+    color: #c3a63d;
+}
+
+.deskripsi-profil {
+    color: var(--teks-muda);
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 580px;
+}
+
+.tombol-utama {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 14px 25px;
+    border-radius: 40px;
+    background: linear-gradient(
+        135deg,
+        #f9edbd,
+        #e9d078
+    );
+    text-decoration: none;
+    font-weight: bold;
+    color: #55451c;
+    box-shadow: 0 8px 20px var(--bayangan);
+    transition: 0.3s ease;
+}
+
+.tombol-utama:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 25px var(--bayangan);
+    color: #55451c;
+}
+
+.tombol-utama:active {
+    transform: scale(0.97);
+}
+
+.lingkaran {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.dekorasi-satu {
+    width: 250px;
+    height: 250px;
+    background: rgba(247, 231, 165, 0.18);
+    top: -80px;
+    right: -60px;
+    animation: gerakDekorasi 8s ease-in-out infinite;
+}
+
+.dekorasi-dua {
+    width: 180px;
+    height: 180px;
+    background: rgba(247, 231, 165, 0.20);
+    bottom: -60px;
+    left: -50px;
+    animation: gerakDekorasi 7s ease-in-out infinite reverse;
+}
+
+.footer-awal {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: var(--teks-muda);
+}
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+    color: #a58a35 !important;
+    font-weight: 800;
+}
+
+.navbar .nav-link {
+    color: var(--teks);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #b19639;
+}
+
+/* ==============================
+   JUDUL DAN KONTEN HALAMAN
+================================ */
+
+.judul-halaman {
+    padding: 65px 0 35px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #fffdf7,
+        #fff4c8
+    );
+}
+
+.judul-halaman h1 {
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 40px);
+}
+
+.judul-halaman p {
+    color: var(--teks-muda);
+    margin: 12px auto 0;
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+.konten-halaman {
+    min-height: 55vh;
+    padding-top: 45px;
+    padding-bottom: 65px;
+}
+
+/* ==============================
+   KARTU MENU DAN KONTEN
+================================ */
+
+.kartu-menu,
+.kartu-foto,
+.kartu-pendidikan,
+.kartu-keahlian,
+.kartu-tentang {
+    height: 100%;
+    border: 1px solid #f3e9c6;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #fffaf0
+    );
+    box-shadow: 0 5px 18px rgba(117, 96, 39, 0.06);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Kotak naik ketika disentuh atau diarahkan kursor */
+
+.kartu-menu:hover,
+.kartu-foto:hover,
+.kartu-pendidikan:hover,
+.kartu-keahlian:hover,
+.kartu-tentang:hover {
+    transform: translateY(-8px);
+    border-color: #e8d17b;
+    box-shadow: 0 15px 30px rgba(117, 96, 39, 0.13);
+}
+
+.kartu-menu:active,
+.kartu-foto:active {
+    transform: translateY(-3px) scale(0.99);
+}
+
+.kartu-menu {
+    display: block;
+    padding: 25px;
+    text-decoration: none;
+    color: var(--teks);
+}
+
+.ikon-menu {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    background: linear-gradient(
+        135deg,
+        #fff4c5,
+        #f2dfa0
+    );
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.kartu-menu h5,
+.kartu-foto h5,
+.kartu-pendidikan h5 {
+    font-weight: 700;
+}
+
+.kartu-menu p,
+.kartu-foto p,
+.kartu-pendidikan p {
+    color: var(--teks-muda);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.panah-menu {
+    display: inline-block;
+    margin-top: 18px;
+    color: #a58a35;
+    font-weight: bold;
+}
+
+/* ==============================
+   TENTANG SAYA
+================================ */
+
+.foto-tentang {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 12px 28px var(--bayangan);
+}
+
+.teks-tentang {
+    line-height: 1.9;
+    color: var(--teks-muda);
+}
+
+.informasi-diri {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0e7c9;
+}
+
+.informasi-diri strong {
+    display: inline-block;
+    min-width: 120px;
+    color: var(--teks);
+}
+
+/* ==============================
+   GALERI FOTO
+================================ */
+
+.kartu-foto {
+    overflow: hidden;
+}
+
+.foto-galeri {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.isi-kartu-foto {
+    padding: 20px;
+}
+
+.tombol-detail {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 9px 18px;
+    border-radius: 25px;
+    background: linear-gradient(
+        135deg,
+        #fff3bf,
+        #f0dc8c
+    );
+    border: 1px solid #eadb9f;
+    color: #5c4b20;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.tombol-detail:hover {
+    transform: translateY(-3px);
+    background: #f0dc8c;
+    color: #51431f;
+}
+
+/* ==============================
+   PENDIDIKAN
+================================ */
+
+.kartu-pendidikan {
+    padding: 25px;
+}
+
+.ikon-pendidikan {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background: #fff1bd;
+    margin-bottom: 18px;
+}
+
+/* ==============================
+   KEAHLIAN
+================================ */
+
+.kartu-keahlian {
+    padding: 22px;
+}
+
+.batang-keahlian {
+    height: 9px;
+    border-radius: 20px;
+    background: #f5efdb;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.batang-keahlian span {
+    display: block;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #f3e4a3,
+        #d6bb5d
+    );
+}
+
+/* ==============================
+   KONTAK
+================================ */
+
+.kartu-kontak {
+    padding: 25px;
+    border: 1px solid #f3e9c6;
+    border-radius: 18px;
+    background: #fffdf7;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+
+.kartu-kontak:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px var(--bayangan);
+}
+
+/* ==============================
+   TOMBOL KEMBALI
+================================ */
+
+.tombol-kembali {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid #eadb9f;
+    border-radius: 30px;
+    background: rgba(255, 249, 230, 0.9);
+    color: #66552a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.tombol-kembali:hover {
+    background: #f0dc8c;
+    color: #51431f;
+    transform: translateX(-4px);
+}
+
+/* ==============================
+   FOOTER
+================================ */
+
+.footer-website {
+    padding: 25px 15px;
+    background: #fffaf0;
+    border-top: 1px solid #f3e9c6;
+    text-align: center;
+    color: var(--teks-muda);
+    font-size: 13px;
+}
+
+/* ==============================
+   ANIMASI KONTEN MUNCUL
+================================ */
+
+.animasi-muncul {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.animasi-muncul.terlihat {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes gerakProfil {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes gerakDekorasi {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(12px, -15px);
+    }
+}
+
+/* ==============================
+   RESPONSIF HP
+================================ */
+
+@media (max-width: 767px) {
+    .halaman-profil {
+        padding-top: 50px;
+        padding-bottom: 35px;
+    }
+
+    .bingkai-profil {
+        width: 210px;
+        height: 210px;
+    }
+
+    .judul-profil {
+        font-size: 32px;
+    }
+
+    .deskripsi-profil {
+        font-size: 14px;
+    }
+
+    .judul-halaman {
+        padding: 45px 15px 30px;
+    }
+
+    .foto-galeri {
+        height: 220px;
+    }
+}
+
+/* Kurangi animasi jika pengguna memilih gerakan minimal */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+.kartu-menu {
+    display: block;
+    width: 100%;
+    height: 100%
+}
+/* ==============================
+   HALAMAN LOGIN
+================================ */
+
+.halaman-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 30px 15px;
+    box-sizing: border-box;
+}
+
+.kartu-login {
+    width: 100%;
+    max-width: 350px;
+    padding: 22px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 1px solid #f3e9c6;
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #fffaf0
+    );
+
+    box-shadow: 0 15px 40px var(--bayangan);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.ikon-login {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #fff4c5,
+        #f2dfa0
+    );
+
+    font-size: 30px;
+}
+
+.kartu-login h2 {
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--teks);
+}
+
+.deskripsi-login {
+    color: var(--teks-muda);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.kartu-login .form-label {
+    color: var(--teks);
+    font-weight: 600;
+}
+
+.kartu-login .form-control {
+    padding: 12px 15px;
+    border: 1px solid #eadb9f;
+    border-radius: 12px;
+}
+
+.kartu-login .form-control:focus {
+    border-color: #d6bb5d;
+
+    box-shadow:
+        0 0 0 0.2rem rgba(214, 187, 93, 0.2);
+}
+
+.tombol-login {
+    display: block;
+    width: 100%;
+
+    margin-top: 10px;
+    padding: 13px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #f9edbd,
+        #e9d078
+    );
+
+    color: #55451c;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.tombol-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--bayangan);
+}
+
+.tombol-login:active {
+    transform: scale(0.98);
+}
+
+/* Pesan Login */
+
+.pesan-login {
+    display: none;
+    padding: 12px;
+    margin: 15px 0;
+
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pesan-login.pesan-salah,
+.pesan-login.pesan-berhasil {
+    display: block;
+}
+
+.pesan-salah {
+    background: #fff0f0;
+    color: #b42318;
+    border: 1px solid #f3c6c6;
+}
+
+.pesan-berhasil {
+    background: #edf9ed;
+    color: #237a35;
+    border: 1px solid #b9e4bf;
+}
+
+/* Tombol Kembali */
+
+.kembali-login {
+    display: inline-block;
+    margin-top: 22px;
+
+    color: #a58a35;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.kembali-login:hover {
+    text-decoration: underline;
+}
+
+/* Responsif untuk HP */
+
+@media (max-width: 767px) {
+
+    .halaman-login {
+        padding: 35px 12px;
+    }
+
+    .kartu-login {
+        padding: 25px 20px;
+    }
+
+}
